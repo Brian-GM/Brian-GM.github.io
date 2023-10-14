@@ -1,0 +1,23 @@
+
+
+header {
+    text-align: center;
+    padding-top: 15%;
+}
+
+.sobre-mi > p{
+    text-align: justify;
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+
+.sobre-mi > h2{
+    padding-top: 15%;
+    text-align: center;
+}
+
+.contacto{
+    padding-top: 5%;
+    text-align: center;
+}
