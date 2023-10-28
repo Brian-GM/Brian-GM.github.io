@@ -1,23 +1,118 @@
 
+body {
+  margin: 0;
 
-header {
+}
+
+
+.nav {
+  position: fixed;
+  right: 5%;
+  top: 2%;
+  width: 100%;
+}
+
+.My{
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 30%;
+
+}
+
+.aboutme {
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 50%;
+}
+
+.skils {
+  text-align: center;
+  padding-top: 80%;
+}
+
+
+
+.projects{
+  padding-top: 30%;
+
+}
+
+.social {
+  position: fixed;
+  height: 100%;
+
+}
+
+
+.contact{
+  padding-top: 10%;
+
+}
+
+.nav .navigator,.nav .idioma{
+  float: right;
+  line-height: 50px;
+}
+.navigator{
+  
+  padding-right: 3%;
+  }
+
+  .idioma{
+    margin-right: 5px;
+  }
+  
+  .skils img{
+    width: 144px;
+    height: 144px;
+    padding-left: 3%;
+    padding-right: 3%;
+    
+    }
+
+  .skils > h2{
+  text-align: center;
+  }
+  .skils  h3{
+  text-align: center;
+  }
+  body h2{
     text-align: center;
-    padding-top: 15%;
-}
-
-.sobre-mi > p{
-    text-align: justify;
-    padding-left: 30%;
-    padding-right: 30%;
-}
+  }
+  
 
 
-.sobre-mi > h2{
-    padding-top: 15%;
+
+  .projects *{
     text-align: center;
-}
+  }
 
-.contacto{
-    padding-top: 5%;
+  .social{
+    margin-left: 30px;
+  }
+      .social img{
+    margin-top: 20px;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top:50%;
+  }
+
+  .contact *{
     text-align: center;
-}
+    
+  }
+  .contact2 img{
+    padding-bottom: 14px;
+  }
+  .contact1, .contact2, .contact3{
+    margin-top: 25%;
+  }
+
+
+
+  /*------------------------------------------------------------*/
+
+  
