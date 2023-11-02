@@ -1,3 +1,8 @@
+body{  background: radial-gradient( closest-side at top, #0f51a1 80%, #0c0d13 100%);
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
 .container {  display: grid;
     grid-template-columns: 5% 95%;
     grid-template-rows: 5% 15% 20% 40% 30% 30% 5%;

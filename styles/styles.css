@@ -10,6 +10,28 @@ body {
   right: 5%;
   top: 2%;
   width: 100%;
+  box-shadow: 16px 14px 20px #0000008c;
+  border-radius: 10px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.nav::before{
+  content: "";
+  background-image: conic-gradient(#ff0052 20deg, transparent 120deg);
+  animation: rotate 2s linear infinite
+
+}
+
+.nav a{
+  color: white;
 }
 
 .My{
@@ -97,7 +119,7 @@ body {
     width: 50px;
     height: 50px;
     position: relative;
-    top:50%;
+    top:40%;
   }
 
   .contact *{
