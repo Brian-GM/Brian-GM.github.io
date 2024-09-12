@@ -8,13 +8,13 @@ document.getElementById("contactForm").addEventListener("submit", function(event
 
     // Obtiene los valores del formulario
     let name = document.getElementById("name").value;
-    let email = document.getElementById("email").value; // Correo del destinatario
+    let email = document.getElementById("email").value;
     let message = document.getElementById("message").value;
 
     // Parámetros del servicio de EmailJS
     let params = {
         name: name,
-        email: email, // Asegúrate de que este campo coincida con el nombre del parámetro en tu plantilla
+        email: email,
         message: message
     };
 
