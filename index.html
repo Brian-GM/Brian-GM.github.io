@@ -13,7 +13,34 @@
 
     <link rel="stylesheet" href="./resources/assets/css/style.css" />
     <link rel="icon" href="./resources/assets/img/badges/lobosbrian.png" type="image/png">
+    <script>
+        function canSubmit() {
+            const currentTime = new Date().getTime();
+            const lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
+            const submissionCooldown = 5 * 60 * 1000; // 5 minutos en milisegundos
 
+            if (lastSubmissionTime && (currentTime - lastSubmissionTime < submissionCooldown)) {
+                alert("Por favor, espera antes de enviar otro formulario.");
+                return false;
+            } else {
+                localStorage.setItem('lastSubmissionTime', currentTime);
+                return true;
+            }
+        }
+
+        function handleSubmit(event) {
+            if (!canSubmit()) {
+                event.preventDefault();
+            } else {
+                alert("Formulario enviado con éxito!");
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contactForm');
+            form.addEventListener('submit', handleSubmit);
+        });
+    </script>
 </head>
 
 <body>
@@ -342,41 +369,44 @@
                 </div>
             </div>
         </section>
-
-        <!-- Sección Contacto -->
-        <section id="contacto"
-            class="section full-height text-white d-flex  flex-column justify-content-center align-items-center my-5">
-            <div class="container text-center">
-                <h1 class="mt-5">Contacto</h1>
-                <div class="row justify-content-center bg-contact py-5 mt-5 rounded">
-                    <div class="col col-md-10 col-lg-8">
-                        <div class="app-form">
-                            <form id="contactForm">
-                                <div class="app-form-group py-3">
-                                    <input type="text" id="name" name="name" class="app-form-control "
-                                        placeholder="Nombre" required>
-                                </div>
-                                <div class="app-form-group py-3">
-                                    <input type="email" id="email" name="email" class="app-form-control"
-                                        placeholder="Email" required>
-                                </div>
-                                <div class="app-form-group message py-3">
-                                    <textarea id="message" name="message" class="app-form-control" placeholder="Mensaje"
-                                        required></textarea>
-                                </div>
-                                <div class="app-form-group buttons">
-                                    <button type="reset" class="app-form-button">Cancelar</button>
-                                    <button type="submit" class="app-form-button">Enviar</button>
-                                </div>
-                            </form>
+   
+   
+          <!-- Sección Contacto -->
+<section id="contacto" class="section full-height text-white d-flex flex-column justify-content-center align-items-center my-5">
+    <div class="container text-center">
+        <h1 class="mt-5">Contacto</h1>
+        <div class="row justify-content-center bg-contact py-5 mt-5 rounded">
+            <div class="col col-md-10 col-lg-8">
+                <div class="app-form">
+                    <form id="contactForm">
+                        <div class="app-form-group py-3">
+                            <input type="text" id="name" name="name" class="app-form-control" placeholder="Nombre" required>
                         </div>
-                    </div>
+                        <div class="app-form-group py-3">
+                            <input type="email" id="email" name="email" class="app-form-control" placeholder="Email" required>
+                        </div>
+                        <div class="app-form-group message py-3">
+                            <textarea id="message" name="message" class="app-form-control" placeholder="Mensaje" required></textarea>
+                        </div>
+                        <div class="app-form-group buttons">
+                            <button type="reset" class="app-form-button">Cancelar</button>
+                            <button type="submit" class="app-form-button">Enviar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 
-        <footer class="footer">
+
+       
+        
+    
+                <footer class="footer">
             <div class="waves">
                 <div class="wave" id="wave1"></div>
                 <div class="wave" id="wave2"></div>
