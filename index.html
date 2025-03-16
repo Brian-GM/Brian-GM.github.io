@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>BrianPortfolio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
     <link rel='stylesheet'
@@ -13,40 +13,61 @@
 
     <link rel="stylesheet" href="./resources/assets/css/style.css" />
     <link rel="icon" href="./resources/assets/img/badges/lobosbrian.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script>
         function canSubmit() {
             const currentTime = new Date().getTime();
             const lastSubmissionTime = localStorage.getItem('lastSubmissionTime');
             const submissionCooldown = 5 * 60 * 1000; // 5 minutos en milisegundos
-
+    
             if (lastSubmissionTime && (currentTime - lastSubmissionTime < submissionCooldown)) {
-                alert("Por favor, espera antes de enviar otro formulario.");
+                alert("Please wait before submitting another form.");
                 return false;
             } else {
                 localStorage.setItem('lastSubmissionTime', currentTime);
                 return true;
             }
         }
-
+    
         function handleSubmit(event) {
+            event.preventDefault(); // Prevenir el envío por defecto del formulario
+    
             if (!canSubmit()) {
-                event.preventDefault();
-            } else {
-                alert("Formulario enviado con éxito!");
+                return; // Detener el envío si no se cumple la validación
             }
+    
+            // Aquí puedes agregar la lógica para enviar el formulario
+            alert("Form successfully submitted!");
+    
+            // Limpiar el formulario después del envío
+            event.target.reset();
         }
-
+    
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('contactForm');
-            form.addEventListener('submit', handleSubmit);
+            if (form) {
+                form.addEventListener('submit', handleSubmit);
+            } else {
+                console.error("Form not found!");
+            }
         });
     </script>
 </head>
 
 <body>
+
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+
+      </div>
+    
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark  bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Mi Página</a>
+        <a class="navbar-brand" href="#">My portfolio </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -54,62 +75,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#tecnologias">Tecnologias</a>
+                    <a class="nav-link" href="#tecnologias">Technologies</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#proyectos">Proyectos</a>
+                    <a class="nav-link" href="#proyectos">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contacto">Contacto</a>
+                    <a class="nav-link" href="#contacto">Contact</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <!-- Background and Floating Shapes -->
-    <div class="backwrap">
-        <div class="back-shapes">
 
-            <!-- Íconos distribuidos por toda la pantalla con énfasis en esquinas-->
-            <span class="floating design" style="top:10%;left:5%;animation-delay:-0.9s;"></span>
-            <span class="floating design" style="top:20%;left:40%;animation-delay:-4.1s;"></span>
-            <span class="floating design" style="top:30%;left:80%;animation-delay:-3.65s;"></span>
-            <span class="floating design" style="top:55%;left:65%;animation-delay:-2.15s;"></span>
-            <span class="floating design" style="top:0%;left:0%;animation-delay:-2.0s;"></span>
-            <span class="floating design" style="top:0%;left:95%;animation-delay:-1.8s;"></span>
-
-            <span class="floating dragonball" style="top:5%;left:15%;animation-delay:-4.8s;"></span>
-            <span class="floating dragonball" style="top:40%;left:60%;animation-delay:-2.3s;"></span>
-            <span class="floating dragonball" style="top:25%;left:90%;animation-delay:-0.35s;"></span>
-            <span class="floating dragonball" style="top:0%;left:50%;animation-delay:-2.5s;"></span>
-            <span class="floating dragonball" style="top:50%;left:0%;animation-delay:-1.9s;"></span>
-            <span class="floating dragonball" style="top:50%;left:95%;animation-delay:-1.4s;"></span>
-
-            <span class="floating gamepad" style="top:10%;left:50%;animation-delay:-4s;"></span>
-            <span class="floating gamepad" style="top:45%;left:75%;animation-delay:-0.65s;"></span>
-            <span class="floating gamepad" style="top:55%;left:85%;animation-delay:-2.25s;"></span>
-            <span class="floating gamepad" style="top:0%;left:80%;animation-delay:-1.3s;"></span>
-
-            <span class="floating joystick" style="top:25%;left:10%;animation-delay:-2.8s;"></span>
-            <span class="floating joystick" style="top:50%;left:30%;animation-delay:-4.45s;"></span>
-            <span class="floating joystick" style="top:55%;left:5%;animation-delay:-2.1s;"></span>
-            <span class="floating joystick" style="top:35%;left:90%;animation-delay:-1.05s;"></span>
-            <span class="floating joystick" style="top:0%;left:30%;animation-delay:-2.3s;"></span>
-            <span class="floating joystick" style="top:0%;left:70%;animation-delay:-1.6s;"></span>
-
-            <span class="floating steam" style="top:15%;left:25%;animation-delay:-1.2s;"></span>
-            <span class="floating steam" style="top:50%;left:10%;animation-delay:-2.8s;"></span>
-            <span class="floating steam" style="top:50%;left:75%;animation-delay:-0.9s;"></span>
-            <span class="floating steam" style="top:0%;left:15%;animation-delay:-1.5s;"></span>
-
-            <span class="floating workstation" style="top:20%;left:65%;animation-delay:-1.8s;"></span>
-            <span class="floating workstation" style="top:40%;left:90%;animation-delay:-3.2s;"></span>
-            <span class="floating workstation" style="top:30%;left:20%;animation-delay:-2.3s;"></span>
-            <span class="floating workstation" style="top:50%;left:5%;animation-delay:-1.4s;"></span>
-            <span class="floating workstation" style="top:0%;left:40%;animation-delay:-1.9s;"></span>
-            <span class="floating workstation" style="top:0%;left:90%;animation-delay:-1.4s;"></span>
-
-            <!-- Un ícono de cada tipo, distribuidos alrededor del centro -->
 
         </div>
     </div>
@@ -123,10 +101,10 @@
             <div class="container text-start">
                 <div class="row align-items-center">
                     <div class="col-12 col-xs-6 col-md-12">
-                        <p class="title-text">Soy Brian un</p>
+                        <p class="title-text">I'm Brian a </p>
                         <div class="dropping-texts title-text-2">
-                            <div>Desarrollador de videojuegos</div>
-                            <div>Diseñador gráfico 2D y 3D</div>
+                            <div>Game Developer</div>
+                            <div>2D and 3D graphic designer</div>
                             <div>Gamer</div>
                         </div>
                     </div>
@@ -168,7 +146,7 @@
                             <div class="username">Brian Gomez Martinez<span>#0690</span></div>
                             <hr />
                             <div class="basic-infos">
-                                <div class="category-title">Miembro desde</div>
+                                <div class="category-title">Member since</div>
                                 <p>Julio 12, 2004</p>
                             </div>
                             <div class="roles">
@@ -221,7 +199,7 @@
 
                         </div>
                         <div class="message">
-                            <div class="category-title my-3">Notas</div>
+                            <div class="category-title my-3">Notes</div>
                             <div class="message-content bg-dark text-white">
                                 <p>Happy Coding!</p>
                             </div>
@@ -232,71 +210,74 @@
             </div>
             </div>
         </section>
-        <!-- Sección tecnologias -->
-        <section id="tecnologias"
-            class="section full-iheight text-white d-flex flex-column justify-content-center align-items-center mt-5">
-            <div class="container text-center">
-                <h1>Tecnologias</h1>
-
-                <div class="row justify-content-center bg-tecnologias p-5 mt-5">
-                    <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-4">
-                        <div class="progress-circle" data-percent="75">
-                            <img src="./resources/assets/img/badges/unity.png" alt="unity">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-                                <circle class="background" cx="50%" cy="50%" r="45%"></circle>
-                                <circle class="progress1" cx="50%" cy="50%" r="45%"></circle>
-                            </svg>
-                            <div class="percentage">75%</div>
-                        </div>
-                        <p>Unity</p>
-                    </div>
-                    <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-4">
-                        <div class="progress-circle" data-percent="25">
-                            <img src="./resources/assets/img/badges/godot.png" alt="godot" width="50px" height="50px">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-                                <circle class="background" cx="50%" cy="50%" r="45%"></circle>
-                                <circle class="progress" cx="50%" cy="50%" r="45%"></circle>
-                            </svg>
-                            <div class="percentage">25%</div>
-                        </div>
-                        <p>Godot</p>
-                    </div>
-                    <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-4">
-                        <div class="progress-circle" data-percent="90">
-                            <img src="./resources/assets/img/badges/c.png" alt="c#">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-                                <circle class="background" cx="50%" cy="50%" r="45%"></circle>
-                                <circle class="progress" cx="50%" cy="50%" r="45%"></circle>
-                            </svg>
-                            <div class="percentage">90%</div>
-                        </div>
-                        <p>C#</p>
-                    </div>
-                    <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-4">
-                        <div class="progress-circle" data-percent="60">
-                            <img src="./resources/assets/img/badges/blender.png" alt="blender">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-                                <circle class="background" cx="50%" cy="50%" r="45%"></circle>
-                                <circle class="progress" cx="50%" cy="50%" r="45%"></circle>
-                            </svg>
-                            <div class="percentage">60%</div>
-                        </div>
-                        <p>Blender</p>
-                    </div>
-                    <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-4">
-                        <div class="progress-circle" data-percent="10">
-                            <img src="./resources/assets/img/badges/krita.png" alt="krita">
-                            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
-                                <circle class="background" cx="50%" cy="50%" r="45%"></circle>
-                                <circle class="progress" cx="50%" cy="50%" r="45%"></circle>
-                            </svg>
-                            <div class="percentage">10%</div>
-                        </div>
-                        <p>Krita</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+     <!-- Sección tecnologias -->
+<section id="tecnologias" class="section full-iheight text-white d-flex flex-column justify-content-center align-items-center mt-5">
+    <div class="container text-center">
+      <h1>Technologies</h1>
+      <div class="row justify-content-center bg-tecnologias p-5 mt-5">
+        <!-- Unity -->
+        <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-4">
+          <div class="progress-circle" data-percent="75">
+            <img src="./resources/assets/img/badges/unity.png" alt="unity">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+              <circle class="background" cx="50%" cy="50%" r="45%"></circle>
+              <circle class="progress" cx="50%" cy="50%" r="45%"></circle>
+            </svg>
+            <div class="percentage">50%</div>
+          </div>
+          <p>Unity</p>
+        </div>
+        <!-- Godot -->
+        <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-4">
+          <div class="progress-circle" data-percent="25">
+            <img src="./resources/assets/img/badges/godot.png" alt="godot">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+              <circle class="background" cx="50%" cy="50%" r="45%"></circle>
+              <circle class="progress" cx="50%" cy="50%" r="45%"></circle>
+            </svg>
+            <div class="percentage">85%</div>
+          </div>
+          <p>Godot</p>
+        </div>
+        <!-- C# -->
+        <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-4">
+          <div class="progress-circle" data-percent="90">
+            <img src="./resources/assets/img/badges/c.png" alt="c#">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+              <circle class="background" cx="50%" cy="50%" r="45%"></circle>
+              <circle class="progress" cx="50%" cy="50%" r="45%"></circle>
+            </svg>
+            <div class="percentage">50%</div>
+          </div>
+          <p>C#</p>
+        </div>
+        <!-- Blender -->
+        <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-4">
+          <div class="progress-circle" data-percent="60">
+            <img src="./resources/assets/img/badges/blender.png" alt="blender">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+              <circle class="background" cx="50%" cy="50%" r="45%"></circle>
+              <circle class="progress" cx="50%" cy="50%" r="45%"></circle>
+            </svg>
+            <div class="percentage">60%</div>
+          </div>
+          <p>Blender</p>
+        </div>
+        <!-- Krita -->
+        <div class="col-6 col-md-4 d-flex flex-column align-items-center mb-4">
+          <div class="progress-circle" data-percent="10">
+            <img src="./resources/assets/img/badges/krita.png" alt="krita">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+              <circle class="background" cx="50%" cy="50%" r="45%"></circle>
+              <circle class="progress" cx="50%" cy="50%" r="45%"></circle>
+            </svg>
+            <div class="percentage">80%</div>
+          </div>
+          <p>Krita</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
         <!-- Sección proyectos -->
         <section
@@ -304,20 +285,16 @@
             id="proyectos">
 
             <div class="container text-center">
-                <h1 class="mt-5">Proyectos</h1>
+                <h1 class="mt-5">My projects</h1>
             </div>
             <div class="owl-carousel custom-carousel owl-theme mt-4">
-                <div class="item active" style="background-image: url(./resources/assets/img/badges/temp.jpg);">
+                <div class="item active" style="background-image: url(./resources/assets/img/divineshift.png);">
                     <div class="item-desc">
-                        <h3>Nada de momento</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis lobortis neque eu
-                            fringilla. Donec suscipit
-                            ultricies blandit. Donec vel leo rutrum, iaculis purus at, ultrices felis. Pellentesque
-                            vehicula ipsum a felis feugiat,
-                            eget congue justo dictum. Nullam sagittis vestibulum.</p>
+                      <h3>DivineShift</h3>
+                      <p>DivineShift is a short and intense auto-runner platformer in which you drive Azrael, a being who can switch between heaven and hell to dodge obstacles to make the highest score possible.</p>
+                      <a href="https://play.google.com/store/apps/details?id=dine.shift&pcampaignid=web_share" target="_blank">Play DivineShift on Google Play</a>
                     </div>
-                </div>
-                <div class="item" style="background-image: url(./resources/assets/img/badges/temp.jpg);">
+                  </div>                <div class="item" style="background-image: url(./resources/assets/img/badges/temp.jpg);">
                     <div class="item-desc">
                         <h3>Nada de momento</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis lobortis neque eu
@@ -374,23 +351,23 @@
           <!-- Sección Contacto -->
 <section id="contacto" class="section full-height text-white d-flex flex-column justify-content-center align-items-center my-5">
     <div class="container text-center">
-        <h1 class="mt-5">Contacto</h1>
+        <h1 class="mt-5">Contact me</h1>
         <div class="row justify-content-center bg-contact py-5 mt-5 rounded">
             <div class="col col-md-10 col-lg-8">
                 <div class="app-form">
                     <form id="contactForm">
                         <div class="app-form-group py-3">
-                            <input type="text" id="name" name="name" class="app-form-control" placeholder="Nombre" required>
+                            <input type="text" id="name" name="name" class="app-form-control" placeholder="Name" required>
                         </div>
                         <div class="app-form-group py-3">
                             <input type="email" id="email" name="email" class="app-form-control" placeholder="Email" required>
                         </div>
                         <div class="app-form-group message py-3">
-                            <textarea id="message" name="message" class="app-form-control" placeholder="Mensaje" required></textarea>
+                            <textarea id="message" name="message" class="app-form-control" placeholder="Message" required></textarea>
                         </div>
                         <div class="app-form-group buttons">
-                            <button type="reset" class="app-form-button">Cancelar</button>
-                            <button type="submit" class="app-form-button">Enviar</button>
+                            <button type="reset" class="app-form-button">Cancel</button>
+                            <button type="submit" class="app-form-button">Send</button>
                         </div>
                     </form>
                 </div>
@@ -399,6 +376,85 @@
     </div>
 </section>
 
+<!-- Footer con efecto de burbujas -->
+<div class="footer">
+    <div class="bubbles">
+      <!-- Generar burbujas dinámicamente -->
+      <div class="bubble" style="--size: 4rem; --distance: 30rem; --position: 10%; --time: 4s; --delay: 0s;"></div>
+      <div class="bubble" style="--size: 3rem; --distance: 35rem; --position: 20%; --time: 5s; --delay: 1s;"></div>
+      <div class="bubble" style="--size: 5rem; --distance: 29rem; --position: 30%; --time: 6s; --delay: 2s;"></div>
+      <div class="bubble" style="--size: 2rem; --distance: 38rem; --position: 40%; --time: 7s; --delay: 7s;"></div>
+      <div class="bubble" style="--size: 4rem; --distance: 41rem; --position: 50%; --time: 4s; --delay: 4s;"></div>
+      <div class="bubble" style="--size: 7rem; --distance: 33rem; --position: 60%; --time: 3s; --delay: 5s;"></div>
+      <div class="bubble" style="--size: 1rem; --distance: 32rem; --position: 70%; --time: 5s; --delay: 8s;"></div>
+      <div class="bubble" style="--size: 5rem; --distance: 43rem; --position: 80%; --time: 6s; --delay: 2s;"></div>
+      <div class="bubble" style="--size: 7rem; --distance: 45rem; --position: 90%; --time: 3s; --delay: 7s;"></div>
+      <div class="bubble" style="--size: 5rem; --distance: 26rem; --position: 100%; --time: 4s; --delay: 1s;"></div>
+      <!-- Puedes añadir más burbujas según sea necesario -->
+    </div>
+    <div class="footer-content">
+        <div>
+          <!-- Enlaces con iconos y efectos -->
+          <ul class="social-icons">
+            <li>
+              <a class="facebook" href="https://play.google.com/store/apps/developer?id=GarmCode" target="_blank">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="fab fa-google-play" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="twitter" href="www.linkedin.com/in/brian-gomez-martinez" target="_blank">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="fas fa-briefcase" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="instagram" href="https://www.instagram.com/_brian_gm_/" target="_blank">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="github" href="https://github.com/Brian-GM" target="_blank">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="fab fa-github" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a class="itch-io" href="https://brian-gm.itch.io/" target="_blank">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <i class="fab fa-itch-io" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+  </div>
+  <svg style="position: fixed; top: 100vh">
+    <defs>
+      <filter id="blob">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob"></feColorMatrix>
+      </filter>
+    </defs>
+  </svg>
+
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 
@@ -406,29 +462,7 @@
        
         
     
-                <footer class="footer">
-            <div class="waves">
-                <div class="wave" id="wave1"></div>
-                <div class="wave" id="wave2"></div>
-                <div class="wave" id="wave3"></div>
-                <div class="wave" id="wave4"></div>
-            </div>
-            <ul class="social-icon">
-                <li class="social-icon__item"><a class="social-icon__link" href="#">
-                        <ion-icon name="logo-facebook"></ion-icon>
-                    </a></li>
-                <li class="social-icon__item"><a class="social-icon__link" href="#">
-                        <ion-icon name="logo-twitter"></ion-icon>
-                    </a></li>
-                <li class="social-icon__item"><a class="social-icon__link" href="#">
-                        <ion-icon name="logo-linkedin"></ion-icon>
-                    </a></li>
-                <li class="social-icon__item"><a class="social-icon__link" href="#">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                    </a></li>
-            </ul>
-            <p>&copy;2024 Brian Gomez | All Rights Reserved</p>
-        </footer>
+             
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"></button>

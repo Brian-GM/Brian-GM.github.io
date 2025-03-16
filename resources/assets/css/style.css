@@ -1,19 +1,16 @@
 /* General */
-
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
 
-
 * {
   margin: 0;
   padding: 0;
-  font-family:'Jersey 25"', sans-serif;;
+  font-family: 'Jersey 25', sans-serif;
   box-sizing: border-box;
 }
 
-body,
-html {
+body, html {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -34,175 +31,63 @@ body {
   text-align: center;
 }
 
+/* Background animated */
+.backwrap {
+  background: #113243;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
 
+.back-shapes {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
 
-     /* Background animated -------------------------------------------------------------------------------------------------- */
+.back-shapes img {
+  opacity: 0.2;
+  position: absolute;
+  width: 1.5%;
+}
 
-         .backwrap {
-           background: #113243;
-           /* Old browsers */
-           background-image: url(../img/nkhs0izabuc51.png);
-           background-repeat: no-repeat;
-           background-size: 100% 100%;
-           width: 100%;
-           height: 100%;
-           position: fixed;
-           left: 0;
-           top: 0;
-           z-index: -1;
-         }
-    
-         /* Shapes & Animation*/
-         .back-shapes {
-           width: 100%;
-           height: 100%;
-           position: relative;
-           overflow: hidden;
-         }
-    
-         .back-shapes img {
-           opacity: 0.2;
-           position: absolute;
-           width: 1.5%;
-         }
-    
-         .floating {
-           position: absolute;
-           animation-name: floating;
-           -webkit-animation-name: floating;
-           animation-duration: 5s;
-           -webkit-animation-duration: 5s;
-           animation-iteration-count: infinite;
-           -webkit-animation-iteration-count: infinite;
-         }
-    
+.floating {
+  position: absolute;
+  animation-name: floating;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
 
-        .floating {
-          display: inline-block;
-          width:40px;
-          height:40px;
-          background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center center;
-          opacity: 0.5;
-        }
-    
-        .floating.console {
-          background-image: url(../img/console.png);
-          display: inline-block;
-            width:40px;
-            height:40px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            opacity: 0.5;
-        }
-    
-        .floating.design {
-          background-image: url(../img/design.png);
-          display: inline-block;
-            width:40px;
-            height:40px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            opacity: 0.5;
-        }
-    
-        .floating.dragonball {
-          background-image: url(../img/dragonball.png);
-          display: inline-block;
-            width:40px;
-            height:40px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            opacity: 0.5;
-        }
-    
-        .floating.gamepad {
-          background-image: url(../img/gamepad.png);
-          display: inline-block;
-            width:40px;
-            height:40px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            opacity: 0.5;
-        }
-    
-        .floating.joystick {
-          background-image: url(../img/joystick.png);
-          display: inline-block;
-            width:40px;
-            height:40px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            opacity: 0.5;
-        }
-    
-        .floating.steam {
-          background-image: url(../img/steam.png);
-          display: inline-block;
-            width:40px;
-            height:40px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            opacity: 0.5;
-        }
-    
-        .floating.workstation {
-          background-image: url(../img/workstation.png);
-          display: inline-block;
-            width:40px;
-            height:40px;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center center;
-            opacity: 0.5;
-        }
+.title-text{
+  font-size: 10rem !important;
+}
 
-         @keyframes floating {
-           0% {
-             transform: translateY(0%) rotate(-55deg);
-           }
-    
-           50% {
-             transform: translateY(300%) rotate(55deg);
-           }
-    
-           100% {
-             transform: translateY(0%) rotate(-55deg);
-           }
-         }
-    
-         @-webkit-keyframes floating {
-           0% {
-             -webkit-transform: translateY(0%);
-           }
-    
-           50% {
-             -webkit-transform: translateY(300%);
-           }
-    
-           100% {
-             -webkit-transform: translateY(0%);
-           }
-         }
+@keyframes floating {
+  0% {
+    transform: translateY(0%) rotate(-55deg);
+  }
+  50% {
+    transform: translateY(300%) rotate(55deg);
+  }
+  100% {
+    transform: translateY(0%) rotate(-55deg);
+  }
+}
 
-/* Background animated End -------------------------------------------------------------------------------------------------- */
-
-/* Title animated Start -----------------------------------------------------------------------------------------------------*/
-
+/* Title animated */
 .dropping-texts {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.dropping-texts>div {
+.dropping-texts > div {
   font-size: 0px;
   opacity: 0;
   margin-left: -30px;
@@ -210,20 +95,18 @@ body {
   font-weight: 300;
 }
 
-.dropping-texts>div:nth-child(1) {
-  animation: roll 6s linear infinite 0s;
+.dropping-texts > div:nth-child(1) {
+  animation: roll 13s linear infinite 0s; /* Duración total: 12s, inicio: 0s */
 }
 
-.dropping-texts>div:nth-child(2) {
-  animation: roll 6s linear infinite 2s;
+.dropping-texts > div:nth-child(2) {
+  animation: roll 13s linear infinite 5s; /* Duración total: 12s, inicio: 4s */
 }
 
-.dropping-texts>div:nth-child(3) {
-  animation: roll 6s linear infinite 4s;
+.dropping-texts > div:nth-child(3) {
+  animation: roll 13s linear infinite 9s; /* Duración total: 12s, inicio: 8s */
 }
-/* .dropping-texts>div:nth-child(4) {
-  animation: roll2 10s linear infinite 6s;
-} */
+
 @keyframes roll {
   0% {
     font-size: 0px;
@@ -232,19 +115,16 @@ body {
     margin-top: 0px;
     transform: rotate(-25deg);
   }
-
   3% {
     opacity: 1;
     transform: rotate(0deg);
   }
-
   5% {
     font-size: inherit;
     opacity: 1;
     margin-left: 0px;
     margin-top: 0px;
   }
-
   20% {
     font-size: inherit;
     opacity: 1;
@@ -252,14 +132,12 @@ body {
     margin-top: 0px;
     transform: rotate(0deg);
   }
-
   27% {
     font-size: 0px;
     opacity: 0.5;
     margin-left: 20px;
     margin-top: 100px;
   }
-
   100% {
     font-size: 0px;
     opacity: 0;
@@ -269,9 +147,10 @@ body {
   }
 }
 
-.title-text{
+.title-text {
   font-size: 6rem;
 }
+
 .title-text-2 {
   text-align: center;
   font-size: 3rem;
@@ -294,11 +173,9 @@ body {
   }
 }
 
-/* Estilos para pantallas con un ancho entre 766px y 1032px */
 @media (min-width: 768px) and (max-width: 1032px) {
   .title-text {
     font-size: 3rem !important;
-
   }
 
   .title-text-2 {
@@ -307,115 +184,19 @@ body {
   }
 }
 
-/* @keyframes roll2 {
-  0% {
-    font-size: 0px;
-    opacity: 0;
-    margin-left: -30px;
-    margin-top: 0px;
-    transform: rotate(-25deg);
-  }
-
-  3% {
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-
-  5% {
-    font-size: inherit;
-    opacity: 1;
-    margin-left: 0px;
-    margin-top: 0px;
-  }
-
-  30% {
-    font-size: inherit;
-    opacity: 1;
-    margin-left: 0px;
-    margin-top: 0px;
-    transform: rotate(0deg);
-  }
-
-  37% {
-    font-size: 1500px;
-    opacity: 0;
-    margin-left: -1000px;
-    margin-top: -800px;
-  }
-
-  100% {
-    font-size: 0px;
-    opacity: 0;
-    margin-left: -30px;
-    margin-top: 0px;
-    transform: rotate(15deg);
-  }
-} */
-/* Ejemplo con !important */
-
-/* Discord Card Start------------------------------------------------------------------------------------------------------------- */
-/* Tooltip */
-.tooltip {
-  display: none;
-  position: absolute;
-  color: #eeeeee;
-  background: #18191c;
-  padding: 0.5rem;
-  border-radius: 3px;
-  max-width: 180px;
-  /* Aumentar el ancho máximo del tooltip */
-  width: max-content;
-  font-size: 1rem;
-  /* Aumentar el tamaño de la fuente */
-  animation: popAnim 0.035s linear;
-  z-index: 10;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.35);
-}
-
-.tooltip-up {
-  bottom: 50px;
-  /* Ajustar el margen inferior del tooltip */
-}
-
-.tooltip-up::before {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  /* Aumentar el tamaño del triángulo */
-  border-right: 8px solid transparent;
-  border-top: 8px solid #18191c;
-}
-
-/* Card */
+/* Discord Card */
 .card {
   background: #292b2f;
   width: 100%;
   max-width: 900px;
-  /* Aumentar el ancho máximo de la tarjeta */
   height: auto;
   border-radius: 10px;
-  /* Aumentar el radio de la esquina */
   box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.25);
-  /* Aumentar la sombra */
 }
+
 .card-header {
   width: 100%;
   height: 180px;
-  /* Aumentar la altura del banner */
-  background-position: center !important;
-  background-size: 100% auto !important;
-  border-radius: 10px 10px 0 0;
-  overflow: hidden;
-}
-.card-header .banner-img {
-  width: 100%;
-  height: 200px;
-  /* Aumentar la altura del banner */
   background-position: center !important;
   background-size: 100% auto !important;
   border-radius: 10px 10px 0 0;
@@ -424,7 +205,6 @@ body {
 
 .card-body {
   padding: 25px;
-  /* Aumentar el padding */
   position: relative;
 }
 
@@ -435,24 +215,19 @@ body {
   align-items: flex-end;
   justify-content: space-between;
   width: calc(100% - 50px);
-  /* Aumentar el espacio */
   top: -80px;
-  /* Ajustar la posición superior */
 }
 
 .card-body .profile-header .profil-logo {
   position: relative;
   border: 8px solid #292b2f;
-  /* Aumentar el grosor del borde */
   border-radius: 50%;
 }
 
 .card-body .profile-header .profil-logo img {
   display: block;
   width: 120px;
-  /* Aumentar el tamaño del logo */
   height: 120px;
-  /* Aumentar el tamaño del logo */
   border-radius: 50%;
 }
 
@@ -461,19 +236,15 @@ body {
   flex-wrap: wrap;
   justify-content: flex-end;
   max-width: 220px;
-  /* Aumentar el ancho máximo de las insignias */
   background: #18191c;
   border-radius: 7px;
   padding: 5px;
-  /* Aumentar el padding */
 }
 
 .card-body .profile-header .badge-item {
   position: relative;
   margin: 10px;
-  /* Aumentar el margen de las insignias */
   width: 30px;
-  /* Aumentar el tamaño de las insignias */
   height: 30px;
   display: flex;
   justify-content: center;
@@ -485,27 +256,18 @@ body {
   height: 100%;
 }
 
-.card-body .badge-item:hover>.tooltip {
-  display: block;
-}
-
 .card-body .profile-body {
   background: #18191c;
   border-radius: 8px;
-  /* Aumentar el radio de la esquina */
   padding: 20px;
-  /* Aumentar el padding */
   margin-top: 60px;
-  /* Ajustar el margen superior */
 }
 
 .card-body .profile-body .username {
   color: #eeeeee;
   margin-bottom: 20px;
-  /* Ajustar el margen inferior */
   font-weight: 600;
   font-size: 1.8rem;
-  /* Aumentar el tamaño del texto */
 }
 
 .card-body .profile-body .username span {
@@ -522,23 +284,18 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1rem;
-  /* Aumentar el tamaño del texto */
   margin-bottom: 10px;
-  /* Ajustar el margen inferior */
 }
 
 .card-body .profile-body .basic-infos,
 .card-body .profile-body .roles {
   margin-bottom: 20px;
-  /* Ajustar el margen inferior */
   margin-top: 16px;
-  /* Ajustar el margen superior */
 }
 
 .card-body .profile-body .basic-infos p {
   color: #bdbebf;
   font-size: 1.1rem;
-  /* Aumentar el tamaño del texto */
 }
 
 .card-body .profile-body .roles .roles-list {
@@ -550,16 +307,11 @@ body {
   background: #292b2f;
   color: #f5f5f5;
   border-radius: 4px;
-  /* Aumentar el radio de la esquina */
   font-size: 1.1rem;
-  /* Aumentar el tamaño del texto */
   font-weight: 300;
   padding: 6px 12px;
-  /* Aumentar el padding */
   margin-right: 8px;
-  /* Ajustar el margen derecho */
   margin-top: 8px;
-  /* Ajustar el margen superior */
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -567,12 +319,9 @@ body {
 
 .card-body .profile-body .roles .role-color {
   width: 16px;
-  /* Aumentar el tamaño del color del rol */
   height: 16px;
-  /* Aumentar el tamaño del color del rol */
   border-radius: 50%;
   margin-right: 8px;
-  /* Ajustar el margen derecho */
 }
 
 .card-body .profile-body .note {
@@ -581,14 +330,11 @@ body {
   background: #18191c;
   width: 100%;
   min-height: 50px;
-  /* Aumentar la altura mínima del área de texto */
   color: #e0e0e0;
   resize: none;
   font-size: 1.1rem;
-  /* Aumentar el tamaño del texto */
   border-radius: 3px;
   padding: 10px;
-  /* Aumentar el padding */
   box-sizing: border-box;
 }
 
@@ -596,22 +342,17 @@ body {
   background: #18191c;
   outline: none;
   border: 1.5px solid #333333;
-  /* Aumentar el grosor del borde */
   padding: 20px;
-  /* Aumentar el padding */
   width: 100%;
   border-radius: 4px;
   color: #eeeeee;
   margin-top: 20px;
-  /* Ajustar el margen superior */
 }
 
-/* Animations */
 @keyframes popAnim {
   from {
     transform: scale(0);
   }
-
   to {
     transform: scale(1);
   }
@@ -619,19 +360,16 @@ body {
 
 #intro {
   margin-top: 20px;
-  /* Ajusta según la altura de tu navbar */
 }
 
 @media (max-width: 768px) {
   #intro {
     flex-direction: column;
     margin-top: 9vh;
-    /* Un margen menor para pantallas pequeñas */
   }
 
   .col-md-4 {
     width: 100%;
-    /* La tarjeta ocupará el 100% en pantallas pequeñas */
   }
 }
 
@@ -642,101 +380,85 @@ body {
 
 .role {
   font-size: 0.8rem !important;
-
 }
-
-
 
 .message-content {
   border: 2px solid #333;
   border-radius: 5px;
-
 }
-.message-content>p {
-    margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
-      font-size: 20px !important;
+
+.message-content > p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 20px !important;
 }
 
 .badge-item {
   position: relative;
   margin: 5px;
-  /* Aumentar el margen de las insignias */
   width: 30px !important;
-  /* Aumentar el tamaño de las insignias */
   height: 30px !important;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
+
 @media (max-width: 370px) {
-.badge-item{
-  width: 15px !important;
-  height: 15px !important;   
+  .badge-item {
+    width: 15px !important;
+    height: 15px !important;
   }
 }
 
 @media (max-width: 767px) {
-
   .fathercard {
     padding-right: 2vw !important;
     padding-left: 2vw !important;
     padding-top: 9vh !important;
   }
 }
- .fathercard{
-      padding-right: 6vw;
-        padding-left: 0vw ;
- }
-     .fathercard {
-       padding-top: 6vh;
-     }
-/* Discord Card End */
 
-/* Navbar----------------------------------------------------------------------------------------------------------------------- */
-/* Estilos básicos para la barra de navegación */
-.navbar {
-  background-color: #f8f9fa;
-  /* Color de fondo claro */
-  padding: 1rem;
-  /* Espaciado alrededor de los elementos de la navbar */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  /* Sombra ligera para dar profundidad */
+.fathercard {
+  padding-right: 6vw;
+  padding-left: 0vw;
+  padding-top: 6vh;
 }
 
+/* Navbar */
+.navbar {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.nav-link{
+  font-size: 2rem !important;
+
+}
 .navbar-brand {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #333;
-  /* Color del texto de la marca */
 }
 
 .navbar-nav .nav-link {
-  font-size: 1rem;
+  font-size: 2rem;
   color: #333;
-  /* Color del texto de los enlaces */
-  padding: 0.5rem 1rem;
-  /* Espaciado interno de los enlaces */
+  padding: 2rem 1rem;
   transition: color 0.3s ease;
-  /* Transición suave al pasar el ratón por encima */
 }
 
 .navbar-nav .nav-link:hover {
   color: #007bff;
-  /* Color al pasar el ratón por encima (hover) */
 }
 
-/* Estilos para dispositivos móviles */
 @media (max-width: 765px) {
   .navbar {
     background-color: #007bff;
-    /* Cambia el color de fondo para dispositivos móviles */
   }
 
   .navbar-toggler {
     border: none;
-    /* Quitar el borde del botón hamburguesa */
   }
 
   .navbar-toggler-icon {
@@ -745,32 +467,25 @@ body {
 
   .navbar-nav .nav-link {
     font-size: 1.2rem;
-    /* Tamaño más grande para mejor legibilidad */
     color: white;
-    /* Color de los enlaces en móviles */
   }
 
   .navbar-nav .nav-link:hover {
     color: #f8f9fa;
-    /* Color claro al pasar el ratón por encima */
   }
 }
 
-/* Estilos para pantallas medianas y grandes */
 @media (min-width: 766px) {
   .navbar {
     padding: 0.8rem 2rem;
-    /* Ajusta el espaciado en pantallas más grandes */
   }
 
   .navbar-nav .nav-link {
     font-size: 1.1rem;
-    /* Tamaño de fuente más grande */
   }
 
   .navbar-nav .nav-link:hover {
     color: #0056b3;
-    /* Cambia el color de hover para pantallas más grandes */
   }
 }
 
@@ -817,6 +532,7 @@ circle {
   stroke-dashoffset: 282.6;
   transition: stroke-dashoffset 1s ease;
 }
+
 .progress1 {
   stroke: #0d84ce;
   stroke-dasharray: 282.6;
@@ -824,107 +540,8 @@ circle {
   transition: stroke-dashoffset 1s ease;
 }
 
-.progress2 {
-  stroke: #0d84ce;
-  stroke-dasharray: 282.6;
-  stroke-dashoffset: 282.6;
-  transition: stroke-dashoffset 1s ease;
-}
-.progress3 {
-  stroke: #0d84ce;
-  stroke-dasharray: 282.6;
-  stroke-dashoffset: 282.6;
-  transition: stroke-dashoffset 1s ease;
-}
-.progress4{
-  stroke: #0d84ce;
-  stroke-dasharray: 282.6;
-  stroke-dashoffset: 282.6;
-  transition: stroke-dashoffset 1s ease;
-}
-/* Para que funcione abajo poner el progress que sea en el porcentaje que quieras */
-.progress-circle[data-percent='100'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 100) / 100);
-}
-
-.progress-circle[data-percent='95'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 95) / 100);
-}
-
-.progress-circle[data-percent='90'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 90) / 100);
-}
-
-.progress-circle[data-percent='85'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 85) / 100);
-}
-
-.progress-circle[data-percent='80'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 80) / 100);
-}
-
 .progress-circle[data-percent='75'] .progress1 {
   stroke-dashoffset: calc(282.6 - (282.6 * 75) / 100);
-}
-
-.progress-circle[data-percent='70'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 70) / 100);
-}
-
-.progress-circle[data-percent='65'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 65) / 100);
-}
-
-.progress-circle[data-percent='60'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 60) / 100);
-}
-
-.progress-circle[data-percent='55'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 55) / 100);
-}
-
-.progress-circle[data-percent='50'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 50) / 100);
-}
-
-.progress-circle[data-percent='45'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 45) / 100);
-}
-
-.progress-circle[data-percent='40'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 40) / 100);
-}
-
-.progress-circle[data-percent='35'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 35) / 100);
-}
-
-.progress-circle[data-percent='30'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 30) / 100);
-}
-
-.progress-circle[data-percent='25'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 25) / 100);
-}
-
-.progress-circle[data-percent='20'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 20) / 100);
-}
-
-.progress-circle[data-percent='15'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 15) / 100);
-}
-
-.progress-circle[data-percent='10'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 10) / 100);
-}
-
-.progress-circle[data-percent='5'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 5) / 100);
-}
-
-.progress-circle[data-percent='0'] .progress {
-  stroke-dashoffset: calc(282.6 - (282.6 * 0) / 100);
 }
 
 .percentage {
@@ -938,7 +555,6 @@ circle {
   transition: opacity 0.3s ease;
 }
 
-
 .progress-circle:hover img {
   opacity: 0;
 }
@@ -947,79 +563,18 @@ circle {
   opacity: 1;
 }
 
-.bg-tecnologias{
+.bg-tecnologias {
   border-radius: 20px;
-background-color: rgba(52, 58, 64, 0.9);
-
+  background-color: rgba(52, 58, 64, 0.9);
 }
 
-#tecnologias{
+#tecnologias {
   margin-top: 15vh !important;
 }
-/* Proyectos--------------------------------------------------------------------------------------------------------------------- */
 
-.clear {
-  clear: both;
-}
-
-
-ul,
-ol {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  outline: none;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-}
-
-a:focus,
-a:active,
-a:visited,
-a:hover {
-  text-decoration: none;
-  outline: none;
-}
-
-a:hover {
-  color: #e73700;
-}
-
-h2 {
-  margin-bottom: 48px;
-  padding-bottom: 16px;
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 700;
-  position: relative;
-  text-transform: capitalize;
-}
-
-h3 {
-  margin: 0 0 10px;
-  font-size: 28px;
-  line-height: 36px;
-}
-
-button {
-  outline: none !important;
-}
-
-/******* Common Element CSS End *********/
-
-/******* Middle section CSS Start ******/
-/* -------- Landing page ------- */
+/* Proyectos */
 .game-section {
   padding: 60px 50px;
-}
-
-.game-section .owl-stage {
-  margin: 15px 0;
-  display: flex;
-  display: -webkit-flex;
 }
 
 .game-section .item {
@@ -1027,22 +582,18 @@ button {
   width: 320px;
   height: 400px;
   display: flex;
-  display: -webkit-flex;
   align-items: flex-end;
-  -webkit-align-items: flex-end;
   background: #343434 no-repeat center center / cover;
   border-radius: 16px;
   overflow: hidden;
   position: relative;
   transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
   cursor: pointer;
 }
 
 .game-section .item.active {
   width: 500px;
   box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
 }
 
 .game-section .item:after {
@@ -1063,161 +614,29 @@ button {
   z-index: 1;
   overflow: hidden;
   transform: translateY(calc(100% - 54px));
-  -webkit-transform: translateY(calc(100% - 54px));
   transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
 }
 
 .game-section .item.active .item-desc {
   transform: none;
-  -webkit-transform: none;
 }
 
 .game-section .item-desc p {
   opacity: 0;
-  -webkit-transform: translateY(32px);
   transform: translateY(32px);
   transition: all 0.4s ease-in-out 0.2s;
-  -webkit-transition: all 0.4s ease-in-out 0.2s;
 }
 
 .game-section .item.active .item-desc p {
   opacity: 1;
-  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
-.game-section .owl-theme.custom-carousel .owl-dots {
-  margin-top: -20px;
-  position: relative;
-  z-index: 5;
+#proyectos {
+  margin-top: 15vh !important;
 }
 
-/******** Middle section CSS End *******/
-
-/***** responsive css Start ******/
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  h2 {
-    margin-bottom: 32px;
-  }
-
-  h3 {
-    margin: 0 0 8px;
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  /* -------- Landing page ------- */
-  .game-section {
-    padding: 50px 30px;
-  }
-
-  .game-section .item {
-    margin: 0 12px 60px;
-    width: 260px;
-    height: 360px;
-  }
-
-  .game-section .item.active {
-    width: 400px;
-  }
-
-  .game-section .item-desc {
-    transform: translateY(calc(100% - 46px));
-    -webkit-transform: translateY(calc(100% - 46px));
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  h2 {
-    margin-bottom: 32px;
-  }
-
-  h3 {
-    margin: 0 0 8px;
-    font-size: 24px;
-    line-height: 32px;
-  }
-
-  .line-title {
-    width: 330px;
-  }
-
-  /* -------- Landing page ------- */
-  .game-section {
-    padding: 50px 30px 40px;
-  }
-
-  .game-section .item {
-    margin: 0 12px 60px;
-    width: 240px;
-    height: 330px;
-  }
-
-  .game-section .item.active {
-    width: 360px;
-  }
-
-  .game-section .item-desc {
-    transform: translateY(calc(100% - 42px));
-    -webkit-transform: translateY(calc(100% - 42px));
-  }
-}
-
-@media (max-width: 767px) {
-  body {
-    font-size: 14px;
-  }
-
-  h2 {
-    margin-bottom: 20px;
-  }
-
-  h3 {
-    margin: 0 0 8px;
-    font-size: 19px;
-    line-height: 24px;
-  }
-
-  .line-title {
-    width: 250px;
-  }
-
-  /* -------- Landing page ------- */
-  .game-section {
-    padding: 30px 15px 20px;
-  }
-
-  .game-section .item {
-    margin: 0 10px 40px;
-    width: 200px;
-    height: 280px;
-  }
-
-  .game-section .item.active {
-    width: 270px;
-    box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-    -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
-  }
-
-  .game-section .item-desc {
-    padding: 0 14px 5px;
-    transform: translateY(calc(100% - 42px));
-    -webkit-transform: translateY(calc(100% - 42px));
-  }
-}
-#proyectos{
-    margin-top: 15vh !important;
-}
-
-/* Contact form -----------------------------------------------------------------------------------------------------------------*/
-button,
-input {
-  font-weight: 700;
-  letter-spacing: 1.4px;
-}
-
+/* Contact form */
 .app-form-group {
   margin-bottom: 15px;
 }
@@ -1238,7 +657,7 @@ input {
   border: none;
   border-bottom: 1px solid #666;
   color: #ddd;
-  font-size: 14px;
+  font-size: 30px;
   text-transform: uppercase;
   outline: none;
   transition: border-color .2s;
@@ -1256,24 +675,26 @@ input {
   background: none;
   border: none;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
   outline: none;
   margin-left: 40px;
 }
 
 .app-form-button:hover {
-  color: #3586ff
+  color: #3586ff;
 }
-#contacto{
+
+#contacto {
   margin-top: 15vh !important;
 }
+
 .bg-contact {
   border-radius: 20px !important;
   background-color: rgba(52, 58, 64, 0.9);
-} 
-/* Footer----------------------------------------------------------------------------------------------------------------- */
+}
 
+/* Footer */
 .footer {
   position: relative;
   width: 100%;
@@ -1377,7 +798,6 @@ input {
   0% {
     background-position-x: 1000px;
   }
-
   100% {
     background-positon-x: 0px;
   }
@@ -1387,31 +807,530 @@ input {
   0% {
     background-position-x: -1000px;
   }
-
   100% {
     background-positon-x: 0px;
   }
 }
+
 footer {
   margin-top: 30vh;
 }
+
 .back-to-top {
   display: block;
   width: 50px;
-  /* Ajusta el tamaño según tus necesidades */
   height: 50px;
-  /* Ajusta el tamaño según tus necesidades */
   background: url('../img/badges/arrow.png') no-repeat center center;
-  /* Cambia 'ruta-de-tu-imagen.png' por la ruta de tu imagen */
   background-size: cover;
   border: none;
   cursor: pointer;
   position: fixed;
-  /* Hace que el botón se mantenga fijo al hacer scroll */
   bottom: 20px;
-  /* Ajusta la distancia desde la parte inferior de la página */
   right: 20px;
-  /* Ajusta la distancia desde la parte derecha de la página */
   z-index: 1000;
-  /* Asegura que el botón esté encima de otros elementos */
+}
+
+/* Discord Card */
+.card-header {
+  width: 100%;
+  height: 180px;
+  background: url('../resources/assets/img/badges/banner.webp') no-repeat center center / cover;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.card-header .banner-img {
+  width: 100%;
+  height: 200px;
+  background: url('../resources/assets/img/badges/banner.webp') no-repeat center center / cover;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+/* Tecnologias */
+.progress-circle {
+  position: relative;
+  width: 150px; /* Tamaño del círculo */
+  height: 150px;
+  margin: 0 auto;
+}
+
+.progress-circle img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 40%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 50%;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.progress-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-circle circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.progress-circle .background {
+  stroke: #e0e0e0; /* Color de fondo del círculo */
+}
+
+.progress-circle .progress {
+  stroke: #0d84ce; /* Color de la barra de progreso */
+  stroke-dasharray: 282.6; /* Circunferencia del círculo */
+  stroke-dashoffset: 282.6; /* Inicia sin progreso */
+  transition: stroke-dashoffset 1s ease;
+}
+
+.progress-circle .percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.5em;
+  color: #000000;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.progress-circle:hover img {
+  opacity: 0;
+}
+
+.progress-circle:hover .percentage {
+  opacity: 1;
+}
+
+/* Ajustes para cada porcentaje */
+.progress-circle[data-percent='75'] .progress {
+  stroke-dashoffset: calc(282.6 - (282.6 * 50) / 100);
+}
+
+.progress-circle[data-percent='25'] .progress {
+  stroke-dashoffset: calc(282.6 - (282.6 * 85) / 100);
+}
+
+.progress-circle[data-percent='90'] .progress {
+  stroke-dashoffset: calc(282.6 - (282.6 * 50) / 100);
+}
+
+.progress-circle[data-percent='60'] .progress {
+  stroke-dashoffset: calc(282.6 - (282.6 * 60) / 100);
+}
+
+.progress-circle[data-percent='10'] .progress {
+  stroke-dashoffset: calc(282.6 - (282.6 * 80) / 100);
+}
+
+/* Fondo animado con gradiente y olas */
+body {
+  overflow: auto;
+  background: linear-gradient(315deg, rgba(10, 10, 10, 1) 3%, rgba(30, 30, 30, 1) 38%, rgba(60, 60, 60, 1) 68%, rgba(100, 100, 100, 1) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.wave {
+  background: rgb(255 255 255 / 50%); /* Olas más transparentes y claras */
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.6; /* Menos opacidad para la segunda ola */
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.4; /* Menos opacidad para la tercera ola */
+}
+
+@keyframes wave {
+  2% {
+    transform: translateX(1);
+  }
+  25% {
+    transform: translateX(-25%);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  75% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(1);
+  }
+}
+
+
+
+/* Estilos para el footer */
+.footer {
+  z-index: 1;
+  --footer-background: #fff; /* Color de fondo del footer */
+  display: grid;
+  position: relative;
+  grid-area: footer;
+  min-height: 12rem;
+  width: 100%; /* Asegura que el footer ocupe todo el ancho */
+  background: var(--footer-background); /* Fondo del footer */
+}
+
+.footer .bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1rem;
+  background: var(--footer-background);
+  filter: url("#blob");
+}
+
+.footer .bubbles .bubble {
+  position: absolute;
+  left: var(--position, 50%);
+  background: var(--footer-background);
+  border-radius: 100%;
+  animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
+             bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  transform: translate(-50%, 100%);
+}
+
+.footer .content {
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 4rem;
+  padding: 2rem;
+  background: var(--footer-background);
+  width: 100%; /* Asegura que el contenido ocupe todo el ancho */
+}
+
+.footer .content a,
+.footer .content p {
+  color: #F5F7FA;
+  text-decoration: none;
+}
+
+.footer .content b {
+  color: white;
+}
+
+.footer .content p {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.footer .content > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer .content > div > div {
+  margin: 0.25rem 0;
+}
+
+.footer .content > div > div > * {
+  margin-right: 0.5rem;
+}
+
+.footer .content .image {
+  align-self: center;
+  width: 4rem;
+  height: 4rem;
+  margin: 0.25rem 0;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Animaciones */
+@keyframes bubble-size {
+  0%, 75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+
+@keyframes bubble-move {
+  0% {
+    bottom: -4rem;
+  }
+  100% {
+    bottom: var(--distance, 10rem);
+  }
+}
+.footer-content{
+  color: black !important;
+  
+}
+/* Estilos para el contenedor del footer */
+.footer-content {
+  position: relative;
+  text-align: center;
+}
+
+/* Estilos para la lista de iconos sociales */
+.footer-content ul.social-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.footer-content ul.social-icons li {
+  list-style: none;
+}
+
+.footer-content ul.social-icons li a {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  font-size: 40px;
+  text-align: center;
+  text-decoration: none;
+  color: #404040;
+  margin: 0 30px;
+  transition: 0.5s;
+}
+
+.footer-content ul.social-icons li a span {
+  position: absolute;
+  transition: transform 0.5s;
+}
+
+.footer-content ul.social-icons li a span:nth-child(1),
+.footer-content ul.social-icons li a span:nth-child(3) {
+  width: 100%;
+  height: 3px;
+  background: #404040;
+}
+
+.footer-content ul.social-icons li a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform-origin: right;
+}
+
+.footer-content ul.social-icons li a:hover span:nth-child(1) {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.footer-content ul.social-icons li a span:nth-child(3) {
+  bottom: 0;
+  left: 0;
+  transform-origin: left;
+}
+
+.footer-content ul.social-icons li a:hover span:nth-child(3) {
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+
+.footer-content ul.social-icons li a span:nth-child(2),
+.footer-content ul.social-icons li a span:nth-child(4) {
+  width: 3px;
+  height: 100%;
+  background: #404040;
+}
+
+.footer-content ul.social-icons li a span:nth-child(2) {
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transform-origin: bottom;
+}
+
+.footer-content ul.social-icons li a:hover span:nth-child(2) {
+  transform: scale(1);
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+
+.footer-content ul.social-icons li a span:nth-child(4) {
+  top: 0;
+  right: 0;
+  transform: scale(0);
+  transform-origin: top;
+}
+
+.footer-content ul.social-icons li a:hover span:nth-child(4) {
+  transform: scale(1);
+  transform-origin: bottom;
+  transition: transform 0.5s;
+}
+
+/* Colores al pasar el ratón */
+.footer-content ul.social-icons li a.facebook:hover {
+  color: #3b5998;
+}
+
+.footer-content ul.social-icons li a.facebook:hover span {
+  background: #3b5998;
+}
+
+.footer-content ul.social-icons li a.twitter:hover {
+  color: #1da1f2;
+}
+
+.footer-content ul.social-icons li a.twitter:hover span {
+  background: #1da1f2;
+}
+
+.footer-content ul.social-icons li a.instagram:hover {
+  color: #c32aa3;
+}
+
+.footer-content ul.social-icons li a.instagram:hover span {
+  background: #c32aa3;
+}
+
+.footer-content ul.social-icons li a.google:hover {
+  color: #dd4b39;
+}
+
+.footer-content ul.social-icons li a.google:hover span {
+  background: #dd4b39;
+}
+
+.footer{
+  margin-top: 15vh !important;
+}
+html, body {
+  overflow-x: hidden; /* Oculta el scroll horizontal */
+  width: 100%; /* Asegura que el ancho no exceda la ventana */
+  max-width: 100% !important; /* Limita el ancho máximo */
+}
+/* General */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Oculta el scroll horizontal */
+  font-family: 'Jersey 25', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  margin-bottom: 0;
+}
+
+/* Background animated */
+.backwrap {
+  background: #113243;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden; /* Evita desbordamiento */
+}
+
+
+.footer .bubbles .bubble {
+  position: absolute;
+  left: var(--position, 50%);
+  background: var(--footer-background);
+  border-radius: 100%;
+  animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s),
+             bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+  transform: translate(-50%, 100%);
+}
+
+/* Asegura que el contenido del footer no cause desbordamiento */
+.footer .content {
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 4rem;
+  padding: 2rem;
+  background: var(--footer-background);
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Animaciones */
+@keyframes bubble-size {
+  0%, 75% {
+    width: var(--size, 4rem);
+    height: var(--size, 4rem);
+  }
+  100% {
+    width: 0rem;
+    height: 0rem;
+  }
+}
+
+@keyframes bubble-move {
+  0% {
+    bottom: -4rem;
+  }
+  100% {
+    bottom: var(--distance, 10rem);
+  }
+}
+
+/* Ajustes adicionales */
+.section {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Evita desbordamiento en el carrusel */
+.owl-carousel {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }

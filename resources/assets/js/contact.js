@@ -15,7 +15,7 @@
         }
 
         if (submissionData.count >= maxSubmissions) {
-            alert("Has alcanzado el límite de envíos por hora. Por favor, espera antes de intentar nuevamente.");
+            alert("You have reached your hourly sending limit. Please wait before trying again");
             return false;
         } else {
             submissionData.count += 1;
@@ -45,9 +45,12 @@
         // Envía el correo utilizando EmailJS
         emailjs.send("service_ou4dz0t", "template_htwh7fb", params)
             .then(function(response) {
-                alert("Correo enviado correctamente.");
+                alert("Mail sent correctly.");
+                document.getElementById("contactForm").reset();
+
+
             }, function(error) {
-                alert("Ocurrió un error al enviar el correo.");
+                alert("An error occurred while sending the mail.");
             });
     }
 
